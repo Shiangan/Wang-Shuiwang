@@ -111,73 +111,80 @@ document.addEventListener('DOMContentLoaded', function () {
         <h1>王水旺先生 訃告</h1>
     </header>
 
-    <main>
-        <!-- 主要照片部分 -->
-        <section class="main-photo-section">
-    <img id="main-photo" src="image/IMG_2464.jpeg" alt="追思照片" loading="lazy">
-    <p id="life-story">
-        <strong>我們摯愛的親人 王水旺先生</strong><br>
-        <strong>於114年08月22日，</strong><br>
-        <strong>上午10點10分，</strong><br>
-        <strong>走完101年的人生旅程，</strong><br>
-        <strong>留下我們永恆的追思與感恩。</strong><br><br>
-        <strong> 謹擇於 民國114年9月12日 星期五 </strong><br>
-        <strong> 台北市立懷愛館 </strong><br>
-        <strong> 景行樓3F［ 至仁三廳 ］</strong><br>
-        <strong> 舉辦告別追思奠禮</strong><br><br>
-        <strong> 敬邀至親好友們蒞臨獻上哀思， </strong><br>
-        <strong> 並向您獻上最深的敬意。 </strong><br><br>
-        <strong> 感謝您的關懷與陪伴，</strong><br>
-        <strong> 家人們銘記在心，衷心感謝。 </strong><br><br>
+<main>
+    <section class="main-photo-section">
+        <img id="main-photo" src="image/IMG_2464.jpeg" alt="追思照片" loading="lazy">
 
-        <strong> 豎靈地點：台北市立殯儀館（懷愛館）</strong><br>
-        <strong> 出殯地點：台北市立殯儀館（懷愛館） </strong><br>
-        <strong> 地址：台北市大安區辛亥路三段330號</strong><br>
-</section>
-         <style>
+        <div id="life-story" class="fade-in-text">
+            <p><strong>我們摯愛的親人 王水旺先生</strong></p>
 
+            <p><strong>於114年08月22日 上午10點10分</strong><br>
+               <strong>走完101年的人生旅程，留下我們永恆的追思與感恩。</strong></p>
+
+            <p><strong>謹擇於 民國114年9月12日（星期五）</strong><br>
+               <strong>台北市立懷愛館 景行樓3F［ 至仁三廳 ］</strong><br>
+               <strong>舉辦告別追思奠禮</strong></p>
+
+            <p><strong>敬邀至親好友們蒞臨獻上哀思，並向您獻上最深的敬意。</strong></p>
+
+            <p><strong>感謝您的關懷與陪伴，家人們銘記在心，衷心感謝。</strong></p>
+
+            <p><strong>豎靈地點：</strong> 台北市立殯儀館（懷愛館）<br>
+               <strong>出殯地點：</strong> 台北市立殯儀館（懷愛館）<br>
+               <strong>地址：</strong> 台北市大安區辛亥路三段330號</p>
+        </div>
+    </section>
+</main>
+
+<style>
 /* 淡入效果 */
 .fade-in-text {
     opacity: 0;
     animation: fadeIn 2s forwards;
 }
-
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+    to { opacity: 1; }
 }
 
+/* 生命故事文字樣式 */
 #life-story {
     text-align: center;
-    font-size: 18px; /* 可以根据需要调整字体大小 */
-    line-height: 1.8; /* 行间距 */
+    font-size: 18px;
+    line-height: 1.8;
     margin: 0 auto;
-    max-width: 800px; /* 控制内容的最大宽度 */
-    padding: 20px; /* 适当增加内边距 */
-    font-family: 'Noto Serif', 'MingLiU', serif; /* 使用優雅的字體 */
-    color: #333; /* 調整文字顏色 */
-    background-color: #f9f9f9; /* 背景顏色讓文字更加突出 */
-    border-radius: 10px; /* 圓角效果 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 加上陰影效果 */
-    letter-spacing: 0.5px; /* 輕微增加字間距，讓文字更通透 */
+    max-width: 800px;
+    padding: 20px;
+    font-family: 'Noto Serif', 'MingLiU', serif;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
+    word-break: keep-all;    /* 中文不亂拆 */
+    white-space: normal;     /* 正常換行 */
 }
 
-/* 响应式设计 */
+/* H1 標題不拆行 */
+h1.no-break {
+    white-space: nowrap;
+    text-align: center;
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    #life-story { font-size: 17px; padding: 18px; }
+    h1.no-break { font-size: 24px; }
+}
 @media (max-width: 600px) {
-    #life-story {
-        font-size: 16px; /* 小屏幕上字体略小 */
-        padding: 15px; /* 减少内边距 */
-    }
+    #life-story { font-size: 16px; padding: 15px; }
+    h1.no-break { font-size: 20px; }
 }
-
 @media (max-width: 400px) {
-    #life-story {
-        font-size: 14px; /* 更小屏幕上的字体大小 */
-        padding: 10px; /* 更小的内边距 */
-    }
+    #life-story { font-size: 14px; padding: 10px; }
+    h1.no-break { font-size: 18px; }
 }
-
 </style>
 
         <!-- 訃告紙本部分 -->
